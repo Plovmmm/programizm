@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>3D Sphere Rotation</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <script src="app.js"></script>
+  
+  <div id="Information">
+    <div id="info-back"></div>
+    <div id="info-modal">
+      <ul class="menu-bar" id="menu">
+        <li id="instruct-head" onclick="infoInstruction()">Инструкция</li>
+        <li id="laba-head" onclick="infoLaba()">Лабораторная установка</li>
+        <li id="contact-head" onclick="infoContact()">Контакты</li>
+        <li onclick="closeInfo()" id="close-info">Закрыть</li>
+      </ul>
+
+      <div id="info-instruction">
+        <p>Чтобы переключить камеру, воспользуйтесь стрелками на клавиатуре. </p>
+      </div>
+
+      <div id="info-laba">
+        <p>В данной установке используется виток и катушка.</p>
+      </div>
+
+      <div id="info-contact">
+        <p>Виртуальную лабораторную работу разработали студенты СПБГЭТУ "ЛЭТИ" группы 3374 Урусов А., Гренадерова А.,  Владимирская А. под руководством Чирцова Александра Сергеевича.</p>
+      </div>
+
+    </div>
+</div>
+
+  <div class="container">
+      <div class="column">
+        <button class="custom-btn btn-1" onclick="exit()">Выход</button>
+          <div id="pokazanie">
+              <p id="pokazanieHead">Показания</p>
+              <div id="pokazanieText">
+              </div>
+              
+               <button onclick="downloadFile(), gotovoExit()" id="gotovo">Скачать файл</button>
+          </div>
+      </div>        
+
+      <div class="column">
+        <header>
+          <span id="header">Виток с током</span>
+          <span id="info"><button onclick="getInfo()">Информация об установке</button></span>
+        </header>
+        <div>
+          <canvas>
+            <script src="./sphere.js" type="module"></script>
+          </canvas>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td>
+                I в витке =
+                <input type="number" id="I_vitk" placeholder="Введите I" value="123">
+                А
+              </td>
+              <td>
+                R витка =
+                <input type="number" id="R_vitk" placeholder="Введите R" value="456">
+                см
+              </td>
+              <td>
+                <button onclick="save_IR()">Сохранить</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="coords">
+          <p>Координаты датчика:</p>
+          <p> X: <span id="X-coord">0.000</span> <br>
+            Y: <span id="Y-coord">0.000</span> <br>
+            
+          </p>
+        </div>
+
+        <div class="Pokazatel">
+          <h3> Текущие показатели: </h3>
+          <br>
+          <div id="window">
+            <p>
+              f<sub>k</sub> = <span id="Fk">1</span> кГц
+              &nbsp;&nbsp;&nbsp;
+              I<sub>k</sub> = <span id="Ik">123</span> мА
+            </p>
+
+            <p>
+              E<sub>з</sub> = <span id="Ez">0.36</span> мВ
+              &nbsp;&nbsp;
+              U<sub>k</sub> = <span id="Uk">456</span> В
+            </p>
+          </div>
+          <br>
+          <div class="switch-container">
+            <img src="css/pics/off.jpg" alt="switch" id="switch">
+          </div>
+        </div>
+        <button class="custom-btn btn-2" onclick=""record()">Записать</button>
+      </div>
+  </div>
+  <script class="centered-script" src="./sphere.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+    font-family: "Exo 2", sans-serif;
+
+    background-image: url('pics/back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+#login{
+    display:none;
+    border: 7px solid #1C2833;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    background-color: #424949 ;
+    color: #F2F3F4;
+    padding: 30px;
+    padding-top: 10px;
+    padding-right: 15px;
+    
+}
+
+.modalFon {
+    display: none; /* По умолчанию фон скрыт */
+    position: fixed; /* Фиксированное позиционирование */
+    z-index: 0; /* Фон будет под модальным окном */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Добавляет прокрутку, если контент превышает высоту экрана */
+    background-color: rgba(0,0,0,0.65); /* Черный фон с прозрачностью */
+}
+
+#close{
+    float: right;
+    margin: 20px;
+}
+
+#headVhod{
+    text-align: center;
+    font-size: xx-large;
+    margin: 50px;
+}
+#knopkiVhod{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+#picsVhod{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

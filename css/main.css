@@ -1,0 +1,170 @@
+body {
+    font-family: "Exo 2", sans-serif;
+    background-image: url('pics/back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+ .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  margin: auto;
+  margin-top: -400px;
+  border: 9px solid green;
+}
+
+ .coords {
+    margin: 10px;
+    text-align: right;
+ }
+
+#header{
+    font-size: x-large;
+ }
+ #info {
+    margin-left: 50%;
+ }
+
+ #pokazanie{
+    background-image: url('pics/note.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 0px solid gray;
+    color: darkblue;
+    margin: 5px;
+    margin-right: 0px;
+    padding-top: 100px;
+    padding: 8px;
+    padding-right: 1px;
+    margin-top: 10px;
+
+    
+}
+#pokazanieHead{
+    margin-top:40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#pokazanieText{
+    max-height: 350px; /* Устанавливает максимальную высоту блока */
+    overflow: auto; /* Добавляет полосы прокрутки, если содержимое блока превышает его высоту */
+    padding-right: 5px;
+}
+
+#info-modal{
+    display: none;
+    position: absolute;
+    background-color: LightSlateGray;
+    border: 5px solid DimGray;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирует модальное окно */
+    z-index: 1000; /* Устанавливает высокое значение z-index, чтобы модальное окно было поверх всех других элементов */
+    padding: 20px;
+}
+#info-back {
+    display: none; /* По умолчанию фон скрыт */
+    position: absolute;
+    z-index: 999; /* Фиксированное позиционирование */
+     /* Фон будет под модальным окном */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Добавляет прокрутку, если контент превышает высоту экрана */
+    background-color: rgba(0,0,0,0.4); /* Черный фон с прозрачностью */
+}
+
+#info-instruction {
+    display:block;
+}
+#info-laba, #info-contact {
+    display:none;
+}
+
+#menu{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-bar {
+  border-radius: 25px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 10px;
+  margin: 50px 0 0 0;
+}
+.menu-bar li {
+  list-style: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.menu-bar li::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.2s;
+  border-radius: 25px;
+}
+.menu-bar li:hover {
+  color: black;
+}
+.menu-bar li:hover::before {
+  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px black;
+  transform: scale(1.2);
+}
+#close-info{
+    color: white;
+    background: red;
+    padding-right: 4%;
+    padding-left: 4%;
+    border-radius: 30px;
+}
+#close-info:hover {
+    background-color: red;
+}
+#close-info:hover::before {
+    background: red; /* Изменение цвета фона на красный */
+    border-radius: 25px;
+    transition: 0.2s;
+    transform: scale(1.2);
+   }
+#instruct-head{
+    margin-left: 30px;
+}
+
+
+.switch-container {
+ width: 74px; /* Ширина контейнера переключателя */
+ height: 58px; /* Высота контейнера переключателя */
+ border: 0px solid #ccc; /* Граница для визуализации */
+ cursor: pointer; /* Изменение курсора на указатель при наведении */
+}
+
+#switch-image {
+ width: 100%; /* Изображение занимает всю ширину контейнера */
+ height: 100%; /* Изображение занимает всю высоту контейнера */
+}
+
