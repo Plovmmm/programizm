@@ -56,11 +56,50 @@
           <span id="header">Виток с током</span>
           <span id="info"><button onclick="getInfo()">Информация об установке</button></span>
         </header>
-        <div>
-          <canvas>
-            <script src="./sphere.js" type="module"></script>
-          </canvas>
+        <div id="container">
+          <canvas id="myCanvas"></canvas>
         </div>
+      
+        <script src="three.js"></script>
+        <script>
+          // Получить элемент <canvas>
+          const canvas = document.querySelector('canvas');
+      
+          // Создать сцену, камеру и рендерер
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+          const renderer = new THREE.WebGLRenderer();
+      
+          // Установить размер рендерера равным размеру элемента <canvas>
+          renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      
+          // Добавить рендерер в DOM
+          document.body.appendChild(renderer.domElement);
+      
+          // Создать куб и добавить его в сцену
+          const geometry = new THREE.BoxGeometry();
+          const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+          const cube = new THREE.Mesh(geometry, material);
+          scene.add(cube);
+      
+          // Позиционировать камеру
+          camera.position.z = 5;
+      
+          // Создать цикл рендеринга
+          function animate() {
+            requestAnimationFrame(animate);
+      
+            // Вращать куб
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+      
+            // Отрисовать сцену
+            renderer.render(scene, camera);
+          }
+      
+          // Запустить цикл рендеринга
+          animate();
+        </script>
         <div>
           <table>
             <tr>
