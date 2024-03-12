@@ -11,10 +11,16 @@ body {
   align-items: center;
 }
 
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 canvas {
-  margin: auto;
-  margin-top: -400px;
-  border: 9px solid green;
+  width: 500px;
+  height: 500px;
 }
 
  .coords {
@@ -167,4 +173,3 @@ canvas {
  width: 100%; /* Изображение занимает всю ширину контейнера */
  height: 100%; /* Изображение занимает всю высоту контейнера */
 }
-
