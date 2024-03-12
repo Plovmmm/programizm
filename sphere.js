@@ -7,16 +7,16 @@ const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerH
 camera.position.set(50, 14, 12);
 camera.rotation.set(-0.6,0.8,0.5);
 
-
-// Получаем контейнер canvas
+// Получить элемент <canvas>
 const canvas = document.querySelector('canvas');
 
-// Создаем рендерер
+// Получить рендерер
 const renderer = new THREE.WebGLRenderer();
 
-// Устанавливаем размер рендерера равным размеру контейнера
+// Установить размер рендерера равным размеру элемента <canvas>
 renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 
+// Добавить рендерер в DOM
 document.body.appendChild(renderer.domElement);
 
 /////////////////////////////////////////////////////////////
